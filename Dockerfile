@@ -50,8 +50,8 @@ RUN chmod 755 /*.sh
 
 # Exposed ENV
 ENV MYSQL_USER admin
-# ENV MYSQL_PASS **Random**
-# ENV ROOT_PASS **Random**
+ENV MYSQL_PASS **Random**
+ENV ROOT_PASS **Random**
 ENV AUTHORIZED_KEYS **None**
 
 # Add volumes for MySQL
