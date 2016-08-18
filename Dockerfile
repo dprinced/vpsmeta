@@ -30,8 +30,8 @@ RUN a2enmod rewrite
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 
 #Environment variables to configure php
-ENV PHP_UPLOAD_MAX_FILESIZE 10M
-ENV PHP_POST_MAX_SIZE 10M
+ENV PHP_UPLOAD_MAX_FILESIZE 10G
+ENV PHP_POST_MAX_SIZE 10G
 
 # Install packages
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen
@@ -57,5 +57,5 @@ ENV AUTHORIZED_KEYS **None**
 # Add volumes for MySQL
 VOLUME  ["/etc/mysql", "/var/lib/mysql", "/app"]
 
-EXPOSE 80 3306 22
+EXPOSE 80 3306 22 8888
 CMD ["/run.sh"]
